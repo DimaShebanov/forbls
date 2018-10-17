@@ -1,5 +1,6 @@
-import { combineReducers } from 'redux';
 import { filterActions } from 'redux-ignore';
-import moduleName from './components/application/reducers';
+import auth from './components/Login/reducer';
 
-export default combineReducers();
+export default {
+    auth
+};

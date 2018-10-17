@@ -43,11 +43,17 @@ module.exports = {
     },
     resolve: {
         extensions: [".json", ".js", ".jsx", ".css", ".less"],
+        alias: {
+            l10n: path.resolve('./src/utils/l10n.js'),
+        }
     },
     devtool: "source-map",
     devServer: {
         port: 9005,
-        publicPath: path.join("/dest/"),
+        contentBase: path.join(__dirname, 'dest/'),
+        watchContentBase: true,
+        hot: true,
+        historyApiFallback: true
     },
     plugins: [new CopyWebpackPlugin(["src/index.html"]), new webpack.HotModuleReplacementPlugin()],
 };
